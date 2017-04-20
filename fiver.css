@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: black;
+	/*background-color: white;*/
+}
+label{
+    color: white;
+}
+#board{
+    float: left;
+    padding-right: 1rem;
+    /*width:calc(85vw - 2rem);
+    max-width:calc(85vw - 2rem);*/
+}
+input{
+    float:left;
+}
+#size{
+    width: 10vw;
+}
+#start-game{
+    width: 5vw;
+}
+button{
+    width: 10vw;
+}
+img{
+    background-color: white;
+}
+object{
+    background-color: white;
+}
+embed{
+    background-color: white;
+}
+/*#board{
+    width: 100%;
+}*/
