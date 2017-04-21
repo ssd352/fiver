@@ -4,6 +4,7 @@
 }
 body{
     background-color: black;
+	font-size:2rem;
 	/*background-color: white;*/
 }
 label{
@@ -19,10 +20,12 @@ input{
     float:left;
 }
 #size{
-    width: 10vw;
+    width: 35vw;
+	font-size:2rem;
 }
 #start-game{
-    width: 5vw;
+    width: 10vw;
+	font-size:2rem;
 }
 button{
     width: 10vw;

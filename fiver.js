@@ -50,7 +50,7 @@ function prepare() {
 			//im[i][j].data = 'svg/blank.svg';
 			//im[i][j].type = 'image/svg+xml';
 			//im[i][j].width = board.width / size;//100/size;
-			im[i][j].style.width = 'calc((40vw) / '+size+')';
+			im[i][j].style.width = 'calc((50vw) / '+size+')';
 			im[i][j].style.background_color = 'white'; 
 			//im[i][j].height = 100/size;
 			im[i][j].addEventListener("click", function(){
