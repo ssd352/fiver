@@ -7,10 +7,19 @@ body{
 	font-size:2rem;
 	/*background-color: white;*/
 }
+header{
+	text-align: center;
+	background: gray; 
+	background: -webkit-linear-gradient(white, gray);
+	background: -o-linear-gradient(white, gray);
+	background: -moz-linear-gradient(white, gray); 
+	background: linear-gradient(white, gray);
+}
 label{
     color: white;
 }
 #board{
+	
     float: left;
     padding-right: 1rem;
     /*width:calc(85vw - 2rem);
@@ -20,15 +29,30 @@ input{
     float:left;
 }
 #size{
+	/*margin-top: 5vh;*/
     width: calc(50vw - 3rem - 10rem);
-	font-size:2rem;
+	font-size:1.4rem;
 }
 #start-game{
+	/*margin-top: 5vh;*/
     width: 10rem;
-	font-size:2rem;
+	font-size:1.4rem;
 }
 button{
-    width: 10vw;
+	margin: 5vh;
+    width: 12rem;
+	font-size:1.4rem;
+	background: #AF0011;
+	background: -moz-linear-gradient(top, #AF0011 0%, #820011 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(100%,#dddddd));
+	background: -webkit-linear-gradient(top, #AF0011 0%,#820011 100%);
+	background: -o-linear-gradient(top, #AF0011 0%,#820011 100%);
+	background: -ms-linear-gradient(top, #AF0011 0%,#820011 100%);
+	background: linear-gradient(top, #AF0011 0%,#820011 100%);
+	border-radius: 0.25rem;
+	border: 1px solid #0D0D0D;
+	-webkit-box-shadow: inset 0px 1px 1px 0 rgba(233,2,38, 1);
+	box-shadow: inset 0px 1px 1px 0 rgba(233,2,38, 1);
 }
 img{
     background-color: white;
