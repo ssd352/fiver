@@ -20,11 +20,11 @@ input{
     float:left;
 }
 #size{
-    width: 35vw;
+    width: calc(50vw - 3rem - 7rem);
 	font-size:2rem;
 }
 #start-game{
-    width: 10vw;
+    width: 7rem;
 	font-size:2rem;
 }
 button{
