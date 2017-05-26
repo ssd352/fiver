@@ -7,9 +7,8 @@ var nm;// = 0;
 var lbl;
 
 function game(){
-	var s = document.getElementById("size").value;
+	var s = $("#size").val();
 	size = parseInt(s);
-	//alert(size);
 	prepare();
 }
 
