@@ -26,50 +26,46 @@ function prepare() {
 	}
 
 	var board = document.getElementById("board");
-	while (board.hasChildNodes()) {
-    	board.removeChild(board.lastChild);
-	}
+	console.log("Board is", board);
+	var board = $("#board");
+	console.log("Board is", board);
+	board.empty();
 
-	var tbl = document.createElement("table");
-	board.appendChild(tbl);
-	var tb = document.createElement("tbody");
-	tbl.appendChild(tb); 
+	var tbl = $("<table>");
+	board.append(tbl);
+	let tb = $("<tbody>");
+	 tbl.append(tb); 
 
 	for (let i = 0; i < size; i++) {
-		let row = document.createElement("tr");
-		tb.appendChild(row);
+		row = $("<tr>");
+		tb.append(row);
 		for (let j = 0; j < size; j++) {
-			td = document.createElement("td");
-			row.appendChild(td);
-			im[i][j] = document.createElement("img");
-			//im[i][j] = document.createElement("object");
-			//im[i][j] = document.createElement("embed");
-			td.appendChild(im[i][j]);
-			//im[i][j].src = 'img/blank.jpg';
-			im[i][j].src = 'svg/blank.svg';
-			//im[i][j].data = 'svg/blank.svg';
-			//im[i][j].type = 'image/svg+xml';
-			//im[i][j].width = board.width / size;//100/size;
-			im[i][j].style.width = 'calc((50vw) / '+size+')';
-			im[i][j].style.background_color = 'white'; 
-			//im[i][j].height = 100/size;
-			im[i][j].addEventListener("click", function(){
-				change(i, j);
-			}, false);
+			td = $("<td>");
+			row.append(td);
+			im[i][j] = $("<img/>",{
+				src:'svg/blank.svg',
+				css:{
+					"width":'calc((50vw) / '+size+')',
+					"background-color" : "white"
+				},
+				click:function(){
+					change(i, j);
+				}
+			});
+			td.append(im[i][j]);
 		}
 	}
 
-	lbl = document.createElement("label");
-	board.appendChild(lbl);
-	lbl.innerText = "Number of moves: " + nm;
+	lbl = $("<label>");
+	board.append(lbl);
+	lbl.text("Number of moves: " + nm);
 }
 function change(i, j) {
-	//alert(i);
 	if (finished()){
 		return;
 	}
 	nm += 1;
-	lbl.innerText = "Number of moves: " + nm;
+	lbl.text("Number of moves: " + nm);
 	c[i][j] *= -1;
 	if (i > 0){
 		c[i - 1][j] *= -1;
@@ -85,7 +81,7 @@ function change(i, j) {
 	}
 	render();
 	if (finished()){
-		lbl.innerHTML = "You did it!<br/>Number of moves: " + nm;
+		lbl.html("You did it!<br/>Number of moves: " + nm);
 	}
 }
 function finished() {
@@ -99,14 +95,11 @@ function finished() {
 function render() {
 	for (i = 0; i < size; i++) {
 		for (let j=0; j < size; ++j){
-		if (c[i][j] == 1)
-			//im[i][j].src = 'img/blank.jpg';
-			im[i][j].src = 'svg/blank.svg';
-			//im[i][j].data = 'svg/blank.svg';
-		else if (c[i][j] == -1)
-			//im[i][j].src = 'img/full.jpg';
-			im[i][j].src = 'svg/full.svg';
-			//im[i][j].data = 'svg/full.svg';
+			if (c[i][j] == 1)
+				im[i][j].attr("src" , 'svg/blank.svg');
+			else if (c[i][j] == -1){
+				im[i][j].attr("src" , 'svg/full.svg');
+			}
 		}
 	}
 }
