@@ -24,10 +24,8 @@ function prepare() {
 		im[i] = new Array(size);
 	}
 
-	var board = document.getElementById("board");
-	console.log("Board is", board);
+	
 	var board = $("#board");
-	console.log("Board is", board);
 	board.empty();
 
 	var tbl = $("<table>");
