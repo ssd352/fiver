@@ -6,6 +6,16 @@ var im;// = new Array(size);
 var nm;// = 0;
 var lbl;
 
+
+$(document).ready(
+	function(){
+		$("#start-game").click(
+			function(){
+				game();
+			});
+		});
+
+
 function game(){
 	var s = $("#size").val();
 	size = parseInt(s);
