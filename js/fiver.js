@@ -92,7 +92,7 @@ function change(i, j) {
 	}
 }
 function finished() {
-	flag = true;
+	var flag = true;
 	for (let i = 0; i < size; i++)
 	for (let j = 0; j < size; j++)
 		if (c[i][j] == 1)
@@ -100,7 +100,7 @@ function finished() {
 	return flag;
 }
 function render() {
-	for (i = 0; i < size; i++) {
+	for (let i = 0; i < size; i++) {
 		for (let j=0; j < size; ++j){
 			if (c[i][j] == 1)
 				im[i][j].attr("src" , 'svg/blank.svg');
@@ -110,4 +110,3 @@ function render() {
 		}
 	}
 }
-//}
